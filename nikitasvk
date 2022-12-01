@@ -1,0 +1,46 @@
+import pandas as pd
+import numpy as np
+
+Series_A=pd.DataFrame([10,20,30,40,50])
+Series_B=pd.DataFrame([50,60,70,80,90])
+common=Series_A.merge(Series_B)
+print(common)
+
+df=Series_A.sum()
+Series_A.agg(['min','max'])
+import matplotlib
+from matplotlib import pyplot as plt
+import seaborn as sns
+import pandas as pd
+import math
+import numpy as np
+
+df=pd.read_csv("C:/Users/asus/Downloads/archive (2)/Cars93.csv")
+df=df.head()
+fig=plt.figure()
+plt.title("Price Range of Car")
+sns.boxplot(df["Price"])
+''''print(np.min(df.Price))
+print(np.max(df.Price))
+print(np.std(df.Price))
+print(np.mean(df.Price))
+print(np.median(df.Price))'''
+
+mode1=(df['MPG.city'].mode())
+print("highest frequency",mode1)
+plt.hist(df['MPG.city'])
+plt.title("frequency")
+plt.xlabel('MPG.city')
+plt.show()
+
+plt.scatter(df['Horsepower'],df['MPG.city'])
+plt.xlabel('Horsepower')
+plt.ylabel('MPG.city')
+plt.show()
+
+plt.plot(df['EngineSize'])
+plt.plot(df['Horsepower'])
+plt.title("engine size vs horse power")
+plt.xlabel('EngineSize')
+plt.ylabel('Horsepower')
+plt.show()
